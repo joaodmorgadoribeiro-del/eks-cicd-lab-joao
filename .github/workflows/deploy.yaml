@@ -62,6 +62,9 @@ jobs:
           aws eks update-kubeconfig \
             --name $EKS_CLUSTER_NAME \
             --region $AWS_REGION
+      
+      - name: trivy check kubectl
+        run: kubectl version --client
 
       # --------------------------------------------------
       # 6. Deploy to EKS
@@ -83,3 +86,13 @@ jobs:
           echo "--- Deployment complete! ---"
           kubectl get pods -l app=cicd-app
           kubectl get svc cicd-app
+
+      - name: slack notification
+        uses: slackapi/slack-github-action@v1.23.0
+        with:
+          payload: |
+            {
+              "text": "Deployment completed successfully!"
+            }
+
+            
