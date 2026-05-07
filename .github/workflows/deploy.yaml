@@ -87,12 +87,14 @@ jobs:
           kubectl get pods -l app=cicd-app
           kubectl get svc cicd-app
 
-      - name: slack notification
+      - name: Notify Slack
         uses: slackapi/slack-github-action@v1.23.0
         with:
           payload: |
             {
               "text": "Deployment completed successfully!"
             }
+        env:    
           slack-message: ${{ secrets.SLACK_WEBHOOK_URL }}
+          slack_webhook_type: INCOMING_WEBHOOK
 
