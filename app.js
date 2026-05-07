@@ -4,9 +4,9 @@ const http = require("http");
 // ✏️  CHANGE THESE VALUES TO TRIGGER
 //     A VISIBLE UPDATE AFTER DEPLOY
 // ======================================
-const APP_VERSION = "1.0.0";
-const BG_COLOR = "#1a1a2e";
-const TEXT_COLOR = "#e94560";
+const APP_VERSION = "2.0.0";        
+const BG_COLOR = "#0b448a";          
+const TEXT_COLOR = "#1e9141";         
 // ======================================
 
 const server = http.createServer((req, res) => {
