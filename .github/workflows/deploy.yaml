@@ -94,5 +94,5 @@ jobs:
             {
               "text": "Deployment completed successfully!"
             }
+          token: ${{ secrets.SLACK_WEBHOOK_URL }}
 
-            
