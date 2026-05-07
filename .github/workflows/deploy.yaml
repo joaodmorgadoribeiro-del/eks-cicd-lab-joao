@@ -12,7 +12,7 @@ env:
 
 jobs:
   deploy:
-    name: staging
+    name: Build, Push, Deploy
     runs-on: ubuntu-latest
 
     steps:

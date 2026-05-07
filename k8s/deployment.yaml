@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cicd-app
+  name: staging
   labels:
-    app: cicd-app
+    app: staging
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: cicd-app
+      app: staging
   template:
     metadata:
       labels:
-        app: cicd-app
+        app: staging
     spec:
       containers:
-        - name: cicd-app
+        - name: staging
           image: IMAGE_PLACEHOLDER
           ports:
             - containerPort: 3000
